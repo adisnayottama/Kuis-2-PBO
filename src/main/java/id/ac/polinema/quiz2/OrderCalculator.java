@@ -73,6 +73,11 @@ public class OrderCalculator {
      * @return true bila valid, false bila validate melempar InvalidWeightException
      */
     public static boolean isAcceptable(LaundryOrder order) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        try {
+            validate(order);
+            return true;
+        } catch (InvalidWeightException e) {
+            return false;
+        }
     }
 }
